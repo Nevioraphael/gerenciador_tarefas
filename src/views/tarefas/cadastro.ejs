@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastrar Tarefa</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+        }
+
+        header {
+            background-color: #263b63;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            width: 500px;
+            max-width: 85%;
+            margin: 35px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 7px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: Arial;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button, .voltar {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 5px;
+            background-color: #263b63;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .voltar {
+            background-color: #777;
+        }
+
+        .erro {
+            color: #c0392b;
+            background: #fce4e4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Gerenciador de Tarefas Acadêmicas</h1>
+    </header>
+
+    <main>
+
+        <h2>Cadastrar Nova Tarefa</h2>
+
+        <% if (erro) { %>
+            <p class="erro"><%= erro %></p>
+        <% } %>
+
+        <form action="/tarefas" method="POST">
+
+            <label for="titulo">Título:</label>
+            <input
+                type="text"
+                id="titulo"
+                name="titulo"
+                minlength="3"
+                maxlength="100"
+                value="<%= dados.titulo || '' %>"
+                required
+            >
+
+            <label for="descricao">Descrição:</label>
+            <textarea
+                id="descricao"
+                name="descricao"
+                maxlength="500"
+                rows="4"
+            ><%= dados.descricao || '' %></textarea>
+
+            <label for="disciplina">Disciplina:</label>
+            <input
+                type="text"
+                id="disciplina"
+                name="disciplina"
+                minlength="2"
+                maxlength="80"
+                value="<%= dados.disciplina || '' %>"
+                required
+            >
+
+            <button type="submit">Cadastrar Tarefa</button>
+
+            <a href="/" class="voltar">Voltar</a>
+
+        </form>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detalhes da Tarefa</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+        }
+
+        header {
+            background-color: #263b63;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            width: 500px;
+            max-width: 85%;
+            margin: 35px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        p {
+            padding: 10px;
+            background-color: #f4f6f9;
+            border-radius: 5px;
+        }
+
+        .pendente {
+            color: #d68910;
+            font-weight: bold;
+        }
+
+        .concluida {
+            color: #239b56;
+            font-weight: bold;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 18px;
+            background-color: #263b63;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Gerenciador de Tarefas Acadêmicas</h1>
+    </header>
+
+    <main>
+
+        <h2>Detalhes da Tarefa</h2>
+
+        <p>
+            <strong>ID:</strong>
+            <%= tarefa.id %>
+        </p>
+
+        <p>
+            <strong>Título:</strong>
+            <%= tarefa.titulo %>
+        </p>
+
+        <p>
+            <strong>Descrição:</strong>
+            <%= tarefa.descricao || 'Sem descrição' %>
+        </p>
+
+        <p>
+            <strong>Disciplina:</strong>
+            <%= tarefa.disciplina %>
+        </p>
+
+        <p>
+            <strong>Status:</strong>
+
+            <span class="<%= tarefa.status %>">
+                <%= tarefa.status %>
+            </span>
+        </p>
+
+        <a href="/tarefas">Voltar para tarefas</a>
+
+    </main>
+
+</body>
+</html>
