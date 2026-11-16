@@ -1,4 +1,4 @@
-Projeto Gerenciador de Tarefas feito com NodeJs, Express e EJS, usando o padrão MVC.
+Projeto Gerenciador de Tarefas Acadêmicas feito com NodeJs, Express e EJS, usando o padrão MVC.
 
 Para utilizá-lo:
 
